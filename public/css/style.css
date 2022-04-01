@@ -4,8 +4,12 @@
 }
 body{
     background-color: rgb(26, 21, 15);
+    color: aliceblue;
+    font-size: 20px;
+    height: 100vh;
 }
 header{
+    width: 100vw;
     background-color: aquamarine;
     color: beige;
 }
@@ -15,4 +19,26 @@ ul{
     list-style:none;
     justify-content: center;
     font-size: 40px;
+}
+div.container-card{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid white;
+    width: 250px;
+    height: 320px;
+}
+div.container-img img{
+    width: 100px;
+    
+    
+}
+div.container-nome{
+    display: flex;
+    font: 10px;
+}
+a{
+    text-decoration: none;
 }

@@ -6,35 +6,35 @@ export const variados = conexao.define("variados", {
         type: Sequelize.INTEGER,
         allowNull: false,
         primaryKey: true,
-        autoIncrement: true,
+        autoIncrement: true
     },
     nome:{
         type: Sequelize.TEXT,
-        allowNull: false,
+        allowNull: false
     },
     img:{
         type: Sequelize.TEXT,
-        allowNull: false,
+        allowNull: false
     },
     ano:{
         type: Sequelize.TEXT,
-        allowNull: false,
+        allowNull: false
     },
     criador:{
         type: Sequelize.TEXT,
-        allowNull: false,
+        allowNull: false
     },
     origem:{
         type: Sequelize.TEXT,
-        allowNull: false,
+        allowNull: false
     },
     teor:{
         type: Sequelize.TEXT,
-        allowNull: false,
+        allowNull: false
     },
 }, {
     freezeTableName: true,
     createdAt: false,
     updatedAt: false,
-    timestamps: false,
+    timestamps: false
 })

@@ -4,11 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
+    <title>Catálogo de bebidas</title>
     <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
 <body>
-    <%- include('./partials/header.ejs') %> 
-    <% console.log(bebidas)%> 
+    <%- include('./partials/header.ejs') %>
+    <main>
+        <% bebidas.forEach(element => { %>
+            <a href="detalhes/<%= element.id %> ">
+                <div class="container-card">
+                    <div class="container-img">
+                        <img src="<%= element.img %>" 
+                        alt="<%= element.nome %>" 
+                        class="card-img"> 
+                    </div> 
+                    <div class="container-nome"><%= element.nome %></div>
+                    <div class="container-btn">
+                        <a href="/apagar/<%= element.id %> ">
+                             <img class="delete-icon" src="/public/img/delete.png" alt="delete icon">
+                        </a>
+                        <a href="/editar/<%= element.id %> ">
+                             <img class="edit-icon" src="/public/img/edit.png" alt="edit icon">
+                        </a>
+                     </div>
+                </div>
+                </a>
+        <% }) %>
+    </main>
 </body>
 </html>
