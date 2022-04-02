@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <title>Adicionar</title>
+</head>
+<body>
+        <%- include('./partials/header.ejs') %>
+    <main class="main-adicionar">
+        <form action="/adicionar" method="post">
+            <legend>Adicionar Bebidas ao Catálogo</legend>
+            <fieldset>
+                <input type="text" name="nome">
+                <label for="nome">Nome</label>
+            </fieldset>
+            <fieldset>
+                <input type="url" name="img">
+                <label for="img">Imagem</label>
+            </fieldset>
+            <fieldset>
+                <input type="number" name="ano">
+                <label for="ano">Ano de criação</label>
+            </fieldset>
+            <fieldset>
+                <input type="text" name="criador">
+                <label for="criador">Criador</label>
+            </fieldset>
+            <fieldset>
+                <input type="text" name="origem">
+                <label for="origem">País de origem</label>
+            </fieldset>
+            <fieldset>
+                <input type="text" name="teor">
+                <label for="teor">Teor Alcoólico</label>
+            </fieldset>
+            <div class="btn-adicionar">
+            <button type="submit">Adicionar</button>
+            </div>
+        </form>
+    </main>
+    
+</body>
+</html>

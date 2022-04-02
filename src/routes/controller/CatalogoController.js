@@ -2,23 +2,23 @@ import { variados } from '/DEV/github/catalogo/src/model/catalogue.js'
 
 export const getIndex = async (req, res) => {
     try {
-        const bebidas = await variados.findAll()
-        res.render('index.ejs', {
+        const bebidas = await variados.findAll({order:[['ano', "ASC"]]})
+        res.status(200).render('index.ejs', {
             bebidas
         })
     }   
     catch(err){
-        res.send(err.message)
+        res.status(500).send(err.message)
     }
 }
 export const getDetalhes = async (req, res) => {
     try {
-        const filme = await variados.findByPk(req.params.id)
-        res.render('detalhes.ejs', {
-            filme
+        const bebidas = await variados.findByPk(req.params.id)
+        res.status(200).render('detalhes.ejs', {
+            bebidas
         })
     } catch (err) {
-        res.send({
+        res.status(500).send({
             err: err.message
         })
     }
@@ -32,6 +32,49 @@ export const getDeletar = async (req, res) => {
         res.status(200).redirect("/")
     }
     catch(err){
-        res.send({err: err.message})
+        res.status(500).send({err: err.message})
+    }
+}
+export const getAdicionar = (req, res ) => {
+    res.status(200).render('adicionar.ejs')
+}
+export const postAdicionar = async (req, res) => {
+    try {
+        const { nome, img, ano, criador, origem, teor } = req.body
+        await variados.create({
+            nome, img, ano, criador, origem, teor
+        })
+        res.status(200).redirect('/')
+    }
+    catch(err){
+        res.status(500).send({err: err.message})
+    }
+
+}
+export const getEditar = async (req, res) =>{
+    const bebida = await variados.findByPk(req.params.id)
+    res.status(200).render('edit.ejs', {
+        bebida
+    })
+}
+export const postEditar = async (req, res) =>{
+    const { nome, img, ano, criador, origem, teor } = req.body
+    try {
+        await variados.update({ 
+            nome: nome, 
+            img: img, 
+            ano: ano, 
+            criador: criador, 
+            origem: origem, 
+            teor: teor 
+        }, {
+            where: {
+                id: req.params.id
+                   }
+           })
+        res.status(200).redirect('/')
+    }
+    catch(err){
+        res.status(500).send({err: err.message})
     }
 }

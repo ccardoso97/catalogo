@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <title>Editar Item</title>
+</head>
+<body>
+    <header>
+        <%- include('./partials/header.ejs') %>
+    </header>
+    <main class="main-adicionar">
+        <% bebidas.forEach(element => { %>
+        <form action="/editar" method="post">
+            <legend>Editar <%= element.nome %> </legend>
+            <fieldset>
+                <input type="text" name="nome" value="<%= element.nome  %>">
+                <label for="nome">Nome</label>
+            </fieldset>
+            <fieldset>
+                <input type="url" name="img" value="<%= element.img  %>">
+                <label for="img">Imagem</label>
+            </fieldset>
+            <fieldset>
+                <input type="number" name="ano" value="<%= element.ano  %>">
+                <label for="ano">Ano de criação</label>
+            </fieldset>
+            <fieldset>
+                <input type="text" name="criador" value="<%= element.criador  %>">
+                <label for="criador">Criador</label>
+            </fieldset>
+            <fieldset>
+                <input type="text" name="origem" value="<%= element.origem  %>">
+                <label for="origem">País de origem</label>
+            </fieldset>
+            <fieldset>
+                <input type="text" name="teor" value="<%= element.teor  %>">
+                <label for="teor">Teor Alcoólico</label>
+            </fieldset>
+            <div class="btn-adicionar">
+            <button type="submit">Adicionar</button>
+            </div>
+        </form>
+        <% }) %>
+    </main>
+    
+</body>
+</html>
