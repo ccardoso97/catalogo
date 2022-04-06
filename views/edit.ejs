@@ -12,38 +12,37 @@
         <%- include('./partials/header.ejs') %>
     </header>
     <main class="main-adicionar">
-        <% bebidas.forEach(element => { %>
+
         <form action="/editar" method="post">
-            <legend>Editar <%= element.nome %> </legend>
+            <legend>Editar <%= bebida.nome %> </legend>
             <fieldset>
-                <input type="text" name="nome" value="<%= element.nome  %>">
+                <input type="text" name="nome" value="<%= bebida.nome  %>">
                 <label for="nome">Nome</label>
             </fieldset>
             <fieldset>
-                <input type="url" name="img" value="<%= element.img  %>">
+                <input type="url" name="img" value="<%= bebida.img  %>">
                 <label for="img">Imagem</label>
             </fieldset>
             <fieldset>
-                <input type="number" name="ano" value="<%= element.ano  %>">
+                <input type="number" name="ano" value="<%= bebida.ano  %>">
                 <label for="ano">Ano de criação</label>
             </fieldset>
             <fieldset>
-                <input type="text" name="criador" value="<%= element.criador  %>">
+                <input type="text" name="criador" value="<%= bebida.criador  %>">
                 <label for="criador">Criador</label>
             </fieldset>
             <fieldset>
-                <input type="text" name="origem" value="<%= element.origem  %>">
+                <input type="text" name="origem" value="<%= bebida.origem  %>">
                 <label for="origem">País de origem</label>
             </fieldset>
             <fieldset>
-                <input type="text" name="teor" value="<%= element.teor  %>">
+                <input type="text" name="teor" value="<%= bebida.teor  %>">
                 <label for="teor">Teor Alcoólico</label>
             </fieldset>
             <div class="btn-adicionar">
-            <button type="submit">Adicionar</button>
+            <button type="submit">Editar</button>
             </div>
         </form>
-        <% }) %>
     </main>
     
 </body>
