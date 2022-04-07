@@ -1,4 +1,5 @@
 import { variados } from '/DEV/github/catalogo/src/model/catalogue.js'
+import { Sequelize } from 'sequelize'
 
 export const getIndex = async (req, res) => {
     try {
@@ -78,3 +79,18 @@ export const postEditar = async (req, res) =>{
         res.status(500).send({err: err.message})
     }
 }
+// export const getPesquisar = async (req, res) =>{
+//     const pesquisar = req.body.pesquisar
+//     try {
+//         const nome = await variados.findAll({
+//         where: {
+//             nome: {
+//                 [Sequelize.Op]: Like`$[pesquisar]`
+//             }
+//         }
+//     })
+//     }
+//     catch(err){
+//         res.status(500).send({err: err.message})
+//     }
+// }

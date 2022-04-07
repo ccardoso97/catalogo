@@ -13,7 +13,7 @@
     </header>
     <main class="main-adicionar">
 
-        <form action="/editar" method="post">
+        <form action="/editar/<%= bebida.id %>" method="post">
             <legend>Editar <%= bebida.nome %> </legend>
             <fieldset>
                 <input type="text" name="nome" value="<%= bebida.nome  %>">

@@ -9,17 +9,15 @@
     --nav-color-main: ##000000;
     --bg-color-input: #7a7676 ;
 }
-  
-.dark_mode {
-    --bg-color-main: rgb(0, 0, 0);
-    --text-color-main: rgb(255, 255, 255) ;
+@font-face {
+    font-family: 'american';
+    src: url(/public/fonts/AMRCANXB.TTF);
 }
 main{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    margin-top: 15px;
     flex-wrap: wrap;
 }
 body{
@@ -59,15 +57,15 @@ header div a {
     color: white;
 }
 div.container-card{
-    margin: 1rem;
+    margin: 0;
     position: relative;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 5px solid rgb(255, 255, 255);
-    width: 250px;
-    height: 320px;
+    width: 50%;
+    height: 50%;
     border-radius: 18px;
     gap: 5px;
 }
@@ -85,16 +83,24 @@ main .data-card{
 }
 main .data-card .card-criador{
     display: flex;
-    font-style: italic;
-    font-size: 18px;
+    font-size: 30px;
+    font-family: 'american';
 }
 main .data-card .card-origem{
     display: flex;
-    font-style: italic;
-    font-size: 15px;
+    font-size: 30px;
 }
+main .data-card .card-ano{
+    display: flex;
+    font-size: 30px;
+}
+main .data-card .card-teor{
+    display: flex;
+    font-size: 30px;
+}
+
 .container-img img{
-    width: 150px;
+    width: 300px;
 }
 main .header-card{
     display: flex;
@@ -102,60 +108,18 @@ main .header-card{
 }
 main .header-card .delete-icon {
     position: absolute;
-    top: 0;
+    top: 35px;
     right: 0;
-    width: 13px;
+    width: 25px;
 }
 main .header-card .edit-icon{
     position: absolute;
     right: -1.5px;
-    top: 20px;
-    width: 15px;
+    top: 70px;
+    width: 28px;
 }
 div.container-nome{
     display: flex;
     justify-content: center;
-}
-form{
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border: 0.5px solid rgb(0, 0, 0);
-    border-radius: 10px;
-    padding: 5px;
-}
-legend{
-    display: flex;
-    justify-content: center;
-    background-color: black;
-    color: white;
-    border-radius: 10px;
-    padding: 5px;
-}
-fieldset{
-    display: flex;
-    border: 0.5px solid rgb(255, 255, 255);
-    background-color: #000000;
-    color: white;
-    gap:5px;
-    height: 300px;
-    align-items: center;
-    border-radius: 10px;
-    padding: 5px;
-}
-.btn-adicionar{
-    display: flex;
-    justify-content: center;
-}
-.btn-adicionar button{
-    width: 100px;
-    background-color: black;
-    color: white;
-    border-radius: 10px;
-    padding: 5px;
-}
-.btn-adicionar button:hover{
-    background-color: rgb(174, 201, 192);
-    cursor: pointer;
+    font-size: 30px;
 }

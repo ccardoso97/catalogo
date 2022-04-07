@@ -4,9 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/detalhes.css" type="text/css">
     <title>Detalhes</title>
 </head>
 <body>
-    
+    <header>
+        <%- include('./partials/header.ejs') %>
+    </header>
+    <main>
+                <div class="container-card">
+                    <div class="header-card">
+                            <a href="/apagar/<%= bebidas.id %> ">
+                                <img class="delete-icon" src="/img/delete.png" alt="delete icon">
+                            </a>                   
+                            <a href="/editar/<%= bebidas.id %>">
+                                <img class="edit-icon" src="/img/edit.png" alt="edit icon">
+                            </a>
+                    </div>
+                    <div class="container-img">
+                        <a href="/detalhes/<%= bebidas.id %>">
+                        <img src="<%= bebidas.img %>" 
+                        alt="<%= bebidas.nome %>" 
+                        class="card-img"> 
+                        </a>
+                    </div> 
+                    <div class="container-nome">
+                        <%= bebidas.nome %>
+                    </div>
+                    <div class="data-card">
+                        <span class="card-criador">Criador: <%= bebidas.criador %> </span>
+                        <span class="card-origem">País de Origem: <%= bebidas.origem %> </span>
+                        <span class="card-ano">Ano de Criação: <%= bebidas.ano %> </span>
+                        <span class="card-teor">Teor Alcóolico: <%= bebidas.teor %> </span>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+    </main>
 </body>
 </html>

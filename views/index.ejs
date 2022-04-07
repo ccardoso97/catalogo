@@ -13,26 +13,30 @@
     </header>
     <main>
         <% bebidas.forEach(element => { %>
-            <a href="detalhes/<%= element.id %> ">
                 <div class="container-card">
+                    <div class="header-card">
+                            <a href="/apagar/<%= element.id %> ">
+                                <img class="delete-icon" src="./img/delete.png" alt="delete icon">
+                            </a>                   
+                            <a href="/editar/<%= element.id %>">
+                                <img class="edit-icon" src="./img/edit.png" alt="edit icon">
+                            </a>
+                    </div>
                     <div class="container-img">
+                        <a href="/detalhes/<%= element.id %>">
                         <img src="<%= element.img %>" 
                         alt="<%= element.nome %>" 
                         class="card-img"> 
+                        </a>
                     </div> 
                     <div class="container-nome">
                         <%= element.nome %>
                     </div>
-                    <div class="container-btn">
-                        <a href="/apagar/<%= element.id %> ">
-                             <img class="delete-icon" src="./img/delete.png" alt="delete icon">
-                        </a>
-                        <a href="/editar/<%= element.id %>">
-                             <img class="edit-icon" src="./img/edit.png" alt="edit icon">
-                        </a>
-                     </div>
+                    <div class="data-card">
+                        <span class="card-criador"><%= element.criador %> </span>
+                        <span class="card-origem"><%= element.origem %> </span>
+                    </div>
                 </div>
-                </a>
         <% }) %>
     </main>
 </body>
